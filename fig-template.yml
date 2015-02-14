@@ -30,4 +30,5 @@ tvheadend:
     - "9981:9981"
     - "9982:9982"
 
-  command: supervisord -n -c /etc/supervisor/
+  command: supervisord -n -c /etc/supervisor/supervisord.conf
+  
