@@ -24,7 +24,8 @@ tvheadend:
   volumes:
     - "/Users/luis/Apps/data/tvheadend/config:/config"
     - "/Users/luis/Apps/data/tvheadend/recordings:/recordings"
-
+    - "/usr/bin/tv_grab_wg++:/usr/bin/tv_grab_wg++"
+    
   # Puerto externo
   ports:
     - "9981:9981"
