@@ -16,19 +16,21 @@
 #   IP Televisión o IPTV (que usan los protocolos UDP o HTTP) y no necesitan de
 #   ningún receptor físico.
 #
+#   Ejecución manual
+#   docker run -t -i  -p 9981:9981 -p 9982:9982 -v /Apps/data/tvheadend:/config -v /mnt/Recordings:/recordings luispa/base-tvheadend /bin/bash
+#
 tvheadend:
 
   image: luispa/base-tvheadend
 
   # Directorio de datos y grabaciones
   volumes:
-    - "/Users/luis/Apps/data/tvheadend/config:/config"
-    - "/Users/luis/Apps/data/tvheadend/recordings:/recordings"
-    
+    - "/Apps/data/tvheadend:/config"
+    - "/mnt/Recordings:/recordings"
+
   # Puerto externo
   ports:
     - "9981:9981"
     - "9982:9982"
 
   command: supervisord -n -c /etc/supervisor/supervisord.conf
-  
