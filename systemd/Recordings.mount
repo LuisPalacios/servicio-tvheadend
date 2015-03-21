@@ -1,0 +1,11 @@
+[Unit]
+Description=Recordings
+Wants=network.target rpc-statd.service
+After=network.target rpc-statd.service
+
+[Mount]
+What=panoramix.parchis.org:/Recordings
+Where=/mnt/Recordings
+Type=nfs
+StandardOutput=syslog
+StandardError=syslog

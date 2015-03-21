@@ -1,0 +1,12 @@
+[Unit]
+Description=Servicio TVHeadEnd
+After=syslog.target network.target auditd.service docker.service Apps.mount Recordings.mount
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /Apps/docker/servicio-tvheadend/start-fig.sh
+ExecStop=/bin/bash /Apps/docker/servicio-tvheadend/stop-fig.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
