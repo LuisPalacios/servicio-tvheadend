@@ -27,6 +27,7 @@ tvheadend:
   volumes:
     - "/Apps/data/tvheadend:/config"
     - "/mnt/Recordings:/recordings"
+    - "/Apps/data/tz:/config/tz"
 
   # Puerto externo
   ports:
